@@ -1,14 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
 *,
 ::after,
 ::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+:root {
+	/** ==================== Colors  ==================== */
+	/* Background */
+	--wrapper-bg-color: rgb(242, 242, 242);
+	--theme-sedans-color: rgb(227, 136, 38);
+	--theme-suvs-color: rgb(0, 105, 112);
+	--theme-luxury-color: rgb(0, 66, 65);
+	--button-bg-color: rgb(242, 242, 242);
+
+	/* Font */
+	--title-font-clor: rgb(242, 242, 242);
+	--text-font-color: rgba(255, 255, 255, 0.75);
+	--button-font-color--hover: rgb(242, 242, 242);
+
+	/* Border */
+	--button-border-color--hover: rgb(242, 242, 242);
 }
 
 html {
 	font-size: 62.5%;
-	font-family: 'Lexend Deca', sans-serif;
 }
 
 body {
@@ -21,7 +41,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	padding: 20px;
-	background: rgb(242, 242, 242);
+	background: var(--wrapper-bg-color);
 }
 
 .card {
@@ -36,16 +56,16 @@ body {
 	padding: 50px 30px;
 }
 
-.item-theme-sedans {
-	background: rgb(227, 136, 38);
+.card__item--theme-sedans {
+	background: var(--theme-sedans-color);
 }
 
-.item-theme-suvs {
-	background: rgb(0, 105, 112);
+.card__item--theme-suvs {
+	background: var(--theme-suvs-color);
 }
 
-.item-theme-luxury {
-	background: rgb(0, 66, 65);
+.card__item--theme-luxury {
+	background: var(--theme-luxury-color);
 }
 
 .icon {
@@ -70,13 +90,13 @@ body {
 	font-family: 'Big Shoulders Display', sans-serif;
 	text-transform: uppercase;
 	font-size: 4.3rem;
-	color: rgb(242, 242, 242);
+	color: var(--title-font-clor);
 	margin-bottom: 30px;
 }
 
 .text {
 	line-height: 2.7rem;
-	color: rgba(255, 255, 255, 0.75);
+	color: var(--text-font-color);
 	margin-bottom: 70px;
 }
 
@@ -84,7 +104,7 @@ body {
 	padding: 16px 40px;
 	border-radius: 30px;
 	border: none;
-	background: rgb(242, 242, 242);
+	background-color: var(--button-bg-color);
 	position: absolute;
 	bottom: 40px;
 	transition: all .3s ease;
@@ -92,39 +112,41 @@ body {
 
 .button:hover {
 	cursor: pointer;
-	border: 2px solid rgb(242, 242, 242);
-	color: rgb(242, 242, 242);
+	border: 2px solid var(--button-border-color--hover);
+	color: var(--button-font-color--hover);
 }
 
-.button-theme-sedans {
-	color: rgb(227, 136, 38);
+.button--theme-sedans {
+	color: var(--theme-sedans-color);
 }
 
-.button-theme-sedans:hover {
-	background: rgb(227, 136, 38);
+.button--theme-sedans:hover {
+	background: var(--theme-sedans-color);
 }
 
-.button-theme-suvs {
-	color: rgb(0, 105, 112);
+.button--theme-suvs {
+	color: var(--theme-suvs-color);
 }
 
-.button-theme-suvs:hover {
-	background: rgb(0, 105, 112);
+.button--theme-suvs:hover {
+	background: var(--theme-suvs-color);
 }
 
-.button-theme-luxury {
-	color: rgb(0, 66, 65);
+.button--theme-luxury {
+	color: var(--theme-luxury-color);
 }
 
-.button-theme-luxury:hover {
-	background: rgb(0, 66, 65);
+.button--theme-luxury:hover {
+	background: var(--theme-luxury-color);
 }
 
+/** ==================== Media  ==================== */
 /* tablets */
 @media (max-width: 768px) {
 	.wrapper {
 		height: 100%;
 	}
+
 	.card {
 		flex-wrap: wrap;
 		max-width: 550px;
